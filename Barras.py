@@ -37,7 +37,14 @@ if __name__ == '__main__':
     for j in J:
         model += pulp.lpSum(x[i, j]*l[i] for i in I) <= L*y[j]
     for i in I:
+<<<<<<< HEAD
         model += pulp.lpSum(x[i, j] for j in J) == d[i]
+=======
+        model += pulp.lpSum(l[j]*x[i, j]
+                            for j in blocos) <= 12*y[i]
+    for j in blocos:
+        model += pulp.lpSum(x[i, j] for i in I) == d[j]
+>>>>>>> novo-branch
     model.solve()
 
     # exportando os valores pro excel
@@ -46,6 +53,7 @@ if __name__ == '__main__':
     for variable in model.variables():
         names.append(variable.name)
         values.append(variable.varValue)
+<<<<<<< HEAD
     values = np.mat(values)
     values = values.reshape(len(I)+1, len(J))
     values = np.delete(values, (0), axis=0)
@@ -59,3 +67,10 @@ if __name__ == '__main__':
     print("Vetor de demandas:")
     print(demanda)
     print('Número de barras utilizadas:', pulp.value(model.objective))
+=======
+        # if variable.varValue != 0:
+        # print("{}".format(variable.name))
+        # print("{}".format(variable.varValue))
+
+    print('Custo Total', pulp.value(model.objective))
+>>>>>>> novo-branch
