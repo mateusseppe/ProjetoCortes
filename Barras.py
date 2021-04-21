@@ -5,7 +5,6 @@ from collections import Counter
 
 blocos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 length = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6]
-#demanda = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
 demanda = np.random.randint(10, 20, 12)
 print(demanda)
 print(length)
