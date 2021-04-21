@@ -28,8 +28,6 @@ if __name__ == '__main__':
                             for j in blocos) <= 12*y[i]
     for j in blocos:
         model += pulp.lpSum(x[i, j] for i in I) == d[j]
-    #solver = pulp.getSolver('GUROBI')
-    # model.solve(solver)
     model.solve()
     names = []
     values = []
