@@ -13,7 +13,7 @@ if __name__ == '__main__':
     for i in range(n_max):
         J.append(i+1)
     L = 12
-
+    ## iniciando a modelagem
     model = pulp.LpProblem("Problema do corte das barras", pulp.LpMinimize)
     x = pulp.LpVariable.dicts("Corte", ((i, j)
                               for i in I for j in J), lowBound=0, cat='Integer')
