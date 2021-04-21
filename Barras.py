@@ -1,6 +1,21 @@
 import pulp
 import pandas as pd
 import numpy as np
+from collections import Counter
+
+blocos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+length = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6]
+demanda = np.random.randint(10, 20, 12)
+print(demanda)
+print(length)
+l = dict(zip(blocos, length))
+d = dict(zip(blocos, demanda))
+n_max = sum(l[i]*d[i] for i in blocos)
+n_max = n_max/6
+n_max = int(n_max)
+I = []
+for i in range(n_max):
+    I.append(i+1)
 
 if __name__ == '__main__':
     I = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
