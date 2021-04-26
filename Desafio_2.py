@@ -28,7 +28,6 @@ if __name__ == '__main__':
     for j in J:
         for k in K:
             j_k_array.append((j,k))
-    #print(triple_array)
     # início do modelo
     model = pulp.LpProblem(
         "Problema do corte das barras com comprimento variável", pulp.LpMinimize)
@@ -86,4 +85,4 @@ if __name__ == '__main__':
     print("A perda mínima é de:", pulp.value(
         model.objective) - soma_blocos, "metros")
 
-    # verificar se a variável binaria está funcionando
+
