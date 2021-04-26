@@ -44,3 +44,6 @@ if __name__ == '__main__':
     print("Vetor de demandas:")
     print(demanda)
     print('Número de barras utilizadas:', pulp.value(model.objective))
+    soma_blocos = sum(l[i]*d[i] for i in I)
+    print("A perda mínima é de:", L*pulp.value(
+        model.objective) - soma_blocos, "metros")
